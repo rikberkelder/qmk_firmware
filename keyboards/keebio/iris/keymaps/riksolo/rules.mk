@@ -1,0 +1,2 @@
+KEY_LOCK_ENABLE = yes
+MOUSEKEY_ENABLE = yes
