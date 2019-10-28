@@ -16,8 +16,15 @@ enum layer_names {
 
 #define KC_AQUO LALT_T(KC_QUOT)
 #define KC_CESC LCTL_T(KC_ESC)
-#define KC_L2MI LT(2,KC_MINS)
-#define KC_L1EQ LT(1,KC_EQL)
+#define KC_L2MI MO(2)
+#define KC_L1EQ MO(1)
+
+#define KC_WMMI LGUI(KC_MINS)
+#define KC_WMPL LGUI(KC_EQL)
+
+#define KC_A1 KC_MS_ACCEL0
+#define KC_A2 KC_MS_ACCEL1
+#define KC_A3 KC_MS_ACCEL2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT_kc(
@@ -28,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      CESC, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,AQUO,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSPO, Z  , X  , C  , V  , B  ,    ,         , N  , M  ,COMM,DOT ,SLSH,RSPC,
+     LSFT, Z  , X  , C  , V  , B  ,    ,         , N  , M  ,COMM,DOT ,SLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                        LGUI,SPC ,L2MI,         L1EQ,ENT ,RCTL
   //                  `----+----+----'        `----+----+----'
@@ -38,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
      F1  , F2 , F3 , F4 , F5 , F6 ,                F7 , F8 , F9 , F10, F11, F12,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,WH_U,BTN2,MS_U,BTN1,HOME,               END ,    ,    ,    ,    ,DEL ,
+         ,WH_U,BTN2,MS_U,BTN1,HOME,               END ,A1  ,A2  ,A3  ,    ,DEL ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,WH_D,MS_L,MS_D,MS_R,    ,               LEFT,DOWN,UP  ,RGHT,    ,    ,
+     WMMI,WH_D,MS_L,MS_D,MS_R,    ,               LEFT,DOWN,UP  ,RGHT,    ,WMPL,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
      CAPS,    ,    ,    ,    ,    ,RST ,        ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
@@ -49,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		),
 
 	[2] = LAYOUT(RGB_HUI,     RGB_MOD,       RGB_M_P,    KC_F4,      KC_F5,      KC_F5,                         KC_F7,     KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,
-		     RGB_HUD,     RGB_TOG,       KC_NO,      KC_NO,      KC_NO,      KC_HOME,                       KC_END,    KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
-		     TG(2),       KC_NO,         KC_NO,      KC_NO,      KC_NO,      KC_NO,                         KC_LEFT,   KC_DOWN,    KC_UP,      KC_RGHT,    KC_NO,      KC_NO,
-		     KC_LSFT,     KC_NO,         KC_LBRC,    KC_LPRN,    KC_LT,      KC_LCBR,  KC_HOME, KC_END,     KC_RCBR,   KC_GT,      KC_RCBR,    KC_RBRC,    KC_NO,      KC_NO,
+		     RGB_HUD,     RGB_TOG,       KC_NO,      KC_MINS,      S(KC_EQL),      KC_HOME,                       KC_END,    S(KC_MINS),      KC_EQL,      KC_NO,      KC_NO,      KC_NO,
+		     TG(2),       KC_NO,         S(KC_COMM),      S(KC_9),      S(KC_LBRC),  KC_LBRC,                         KC_RBRC,   S(KC_LBRC),    S(KC_0),      S(KC_DOT),    KC_NO,      KC_NO,
+		     KC_LSFT,     KC_NO,         KC_LBRC,    KC_LPRN,    KC_LT,      KC_LCBR,  KC_HOME, KC_END,     KC_RCBR,   KC_GT,      KC_RCBR,    KC_RBRC,    KC_NO,      KC_RSFT,
 		     KC_LSFT, KC_NO, KC_NO,                                                                         KC_TRNS, KC_NO, KC_NO),
 
 	[3] = LAYOUT(
