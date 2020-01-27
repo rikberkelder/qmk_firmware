@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      CESC, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,AQUO,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, Z  , X  , C  , V  , B  ,    ,         , N  , M  ,COMM,DOT ,SLSH,RSFT,
+     LSFT, Z  , X  , C  , V  , B  ,     ,    PSCR, N  , M  ,COMM,DOT ,SLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                        LGUI,SPC ,L2MI,         L1EQ,ENT ,RCTL
   //                  `----+----+----'        `----+----+----'
@@ -56,8 +56,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		),
 
 	[2] = LAYOUT(RGB_HUI,     RGB_MOD,       RGB_M_P,    KC_F4,      KC_F5,      KC_F5,                         KC_F7,     KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,
-		     RGB_HUD,     RGB_TOG,       KC_NO,      KC_MINS,      S(KC_EQL),      KC_HOME,                       KC_END,    S(KC_MINS),      KC_EQL,      KC_NO,      KC_NO,      KC_NO,
-		     TG(2),       KC_NO,         S(KC_COMM),      S(KC_9),      S(KC_LBRC),  KC_LBRC,                         KC_RBRC,   S(KC_LBRC),    S(KC_0),      S(KC_DOT),    KC_NO,      KC_NO,
+		     RGB_HUD,     RGB_TOG,       KC_NO,      KC_MINS,      S(KC_EQL),      KC_HOME,                       KC_END,    S(KC_MINS),      KC_EQL,      KC_NO,      KC_NO,      KC_BSPC,
+		     TG(2),       KC_NO,         S(KC_COMM),      S(KC_9),      S(KC_LBRC),  KC_LBRC,                         KC_RBRC,   S(KC_RBRC),    S(KC_0),      S(KC_DOT),    KC_NO,      KC_NO,
 		     KC_LSFT,     KC_NO,         KC_LBRC,    KC_LPRN,    KC_LT,      KC_LCBR,  KC_HOME, KC_END,     KC_RCBR,   KC_GT,      KC_RCBR,    KC_RBRC,    KC_NO,      KC_RSFT,
 		     KC_LSFT, KC_NO, KC_NO,                                                                         KC_TRNS, KC_NO, KC_NO),
 
