@@ -26,6 +26,8 @@ enum layer_names {
 #define KC_A2 KC_MS_ACCEL1
 #define KC_A3 KC_MS_ACCEL2
 
+#define KC_TL3 TG(3)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
@@ -35,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      CESC, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,AQUO,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, Z  , X  , C  , V  , B  ,     ,    PSCR, N  , M  ,COMM,DOT ,SLSH,RSFT,
+     LSFT, Z  , X  , C  , V  , B  , TL3 ,    PSCR, N  , M  ,COMM,DOT ,SLSH,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                        LGUI,SPC ,L2MI,         L1EQ,ENT ,RCTL
   //                  `----+----+----'        `----+----+----'
@@ -66,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 				 MI_C_3, MI_Cs_3, MI_D_3, MI_Ds_3, MI_E_3, MI_F_3, MI_Fs_3, MI_G_3, MI_Gs_3, MI_A_3, MI_As_3, MI_B_3,
 				 MI_C_2, MI_Cs_2, MI_D_2, MI_Ds_2, MI_E_2, MI_F_2, MI_Fs_2, MI_G_2, MI_Gs_2, MI_A_2, MI_As_2, MI_B_2,
 				 MI_C_1, MI_Cs_1, MI_D_1, MI_Ds_1, MI_E_1, MI_F_1, KC_NO, KC_NO, MI_Fs_1, MI_G_1, MI_Gs_1, MI_A_1, MI_As_1, MI_B_1,
-				 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TG(3)),
+				 KC_NO, KC_NO, TG(3), KC_NO, KC_NO, TG(3)),
 
 	[4] = LAYOUT(KC_NO,      KC_NO,       KC_NO,       KC_NO,      KC_NO,      KC_NO,                       KC_NO,     KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
 		     KC_NO,      KC_NO,       KC_NO,       KC_NO,      KC_NO,      KC_NO,                       KC_NO,     KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
@@ -115,4 +117,3 @@ void matrix_scan_user(void) {
 //                           ,    ,   ,              ,    ,
   //                  `----+----+----'        `----+----+----'
 //		),
-
